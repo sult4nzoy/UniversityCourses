@@ -1,0 +1,344 @@
+/*
+C++
+Filnamn: main.cpp
+Skrivet av: Omar Sultanzoy
+Skapat datum: 2024-12-23
+Senast ändrad: 2025-01-08
+Kurs: Introduktion till programmering
+Kursanvsarig: Nayeb Maleki & Jan-Erik
+Beskrinvning: Projekt Kontaktbok i C++ */
+
+#include <iostream>
+#include <fstream>
+#include <map>
+#include <string>
+#include <algorithm>
+#include <cctype>
+#include <vector>
+#include <sstream>
+
+bool bokstäverKontroll(const std::string &bokstäver); //Alla funktioner
+bool adressKontroll(const std::string &adress);
+bool emailKontroll(const std::string &email);
+bool emailKontroll1(const std::string &email1);
+bool emailKontroll2(const std::string &email2);
+bool telefonnummerKontroll(const std::string &telefonnummer);
+bool födelsedagKontroll(const std::string &datum);
+bool födelsedagKontroll1(const std::string &datum1);
+bool programKör = true;
+
+int main()
+{
+    while (programKör)
+    {
+        int användarensVal = 0;
+
+        std::cout << "1. Lägga till en kontakt." << std::endl; //Meny för användaren.
+        std::cout << "2. Ta bort en kontakt." << std::endl;
+        std::cout << "3. Sök efter en kontakt." << std::endl;
+        std::cout << "4. Avsluta program." << std::endl;
+        std::cout << std::endl;
+        std::cout << "Val: ";
+
+        std::cin >> användarensVal;
+
+        switch (användarensVal) //Använder switch istället för massa if- & else-satser.
+        {
+        case 1:
+        {
+            std::string förnamn, efternamn, epost, telefonnummer, födelsedag, adress, övrigt, läggaTillKontakt;
+            std::ofstream outFile("Kontaktbok", std::ios::app); //Lägger till ny data längst ned efter data som lades in innan.
+
+            while (true)
+            {
+                std::cout << "Förnamn på personen: "; // Användaren får skriva förnamn
+                std::cin >> förnamn;
+
+                if (!bokstäverKontroll(förnamn)) //Anropar funktionen för kontroll
+                {
+                    std::cout << "Förnamnet får endast innehålla bokstäver. Försök igen." << std::endl; //Felmeddelande
+                }
+                else
+                {
+                    break;
+                }
+            }
+
+            while (true)
+            {
+                std::cout << "Efternamn på personen: "; // Användaren får skriva efternamn
+                std::cin >> efternamn;
+
+                if (!bokstäverKontroll(efternamn)) //Anropar funktionen för kontroll
+                {
+                    std::cout << "Efternamnet får endast innehålla bokstäver. Försök igen." << std::endl; //Felmeddelande
+                }
+                else
+                {
+                    break;
+                }
+            }
+
+            while (true)
+            {
+                std::cout << "Personens adress: "; // Användaren får skriva adress
+                std::cin.ignore(); // Detta behövs då vi måste ignorera det användaren skrev innan.
+                std::getline(std::cin, adress); //Väldigt viktigt att använda getline här eftersom när användern skriver " " så hämtar vanlig cin inte hela. 
+
+                if (!adressKontroll(adress)) //Anropar funktionen för kontroll
+                {
+                    std::cout << "Din adress måste innehålla ett nummer. Försök igen." << std::endl; //Felmeddelande
+                }
+                else
+                {
+                    break;
+                }
+            }
+
+            while (true)
+            {
+                std::cout << "Personens e-postadress: "; // Användaren får skriva epost
+                std::cin >> epost;
+
+                if (!emailKontroll(epost)) //Anropar funktionen för kontroll
+                {
+                    std::cout << "Din e-post måste innehålla '@'. Försök igen." << std::endl; //Felmeddelande
+                }
+                else if (!emailKontroll1(epost) && !emailKontroll2(epost)) //Anropar funktionerna för kontroll
+                {
+                    std::cout << "Din e-post måste innehålla '.se' eller '.com'. Försök igen." << std::endl; //Felmeddelande
+                }
+                else
+                {
+                    break;
+                }
+            }
+
+            while (true)
+            {
+                std::cout << "Personens telefonnummer: "; // Användaren får skriva telefonnummer
+                std::cin >> telefonnummer;
+
+                if (!telefonnummerKontroll(telefonnummer)) //Anropar funktionen för kontroll
+                {
+                    std::cout << "Ditt telefonnummer måste innehålla 10 siffror. Försök igen." << std::endl; //Felmeddelande
+                }
+                else if (!std::all_of(telefonnummer.begin(), telefonnummer.end(), ::isdigit)) //En kontorll för att kolla ifall det användaren skrev bara är siffror.
+                {
+                    std::cout << "Endast siffror. Försök igen." << std::endl; //Felmeddelande
+                }
+                else
+                {
+                    break;
+                }
+            }
+
+            while (true)
+            {
+                std::cout << "Personens födelsedag (i detta format: DDMMÅÅ): "; // Användaren får skriva födelsedagsdatum
+                std::cin >> födelsedag;
+
+                if (!födelsedagKontroll(födelsedag)) //Anropar funktionen för kontroll
+                {
+                    std::cout << "Födelsedatumet måste vara exakt 6 siffror i formatet DDMMÅÅ." << std::endl; //Felmeddelande
+                }
+                else if (!födelsedagKontroll1(födelsedag)) //Anropar funktionen för kontroll
+                {
+                    std::cout << "Födelsedatumet får endast innehålla siffror. Försök igen." << std::endl; //Felmeddelande
+                }
+                else
+                {
+                    break;
+                }
+            }
+
+            std::cout << "Övrigt, t.ex kön: "; // Användaren får skriva förnamn
+            std::cin >> övrigt;
+
+            outFile << "---------------------------" << std::endl; //Här skrivs all information ut till outFile (Kontaktbok)
+            outFile << förnamn << std::endl;
+            outFile << efternamn << std::endl;
+            outFile << adress << std::endl;
+            outFile << epost << std::endl;
+            outFile << telefonnummer << std::endl;
+            outFile << födelsedag << std::endl;
+            outFile << övrigt << std::endl;
+            outFile << "---------------------------" << std::endl;
+
+            std::cout << std::endl;
+            std::cout << "Kontakten lades till i kontaktboken!" << std::endl;
+            std::cout << std::endl;
+
+            break; //Slut på case 1
+        }
+        case 2:
+        {
+            std::ifstream inFile("Kontaktbok"); //Här öppnas filen "Kontaktbok"
+            std::vector<std::string> allaKontakter; // Här deklareras en vektor av typen string
+
+            std::string streck1, streck2, kontakt, förnamn, efternamn, adress, epost, telefonnummer, födelsedag, övrigt;
+            while (std::getline(inFile, streck1))
+            {
+
+                if (streck1.empty())
+                    continue;
+                {
+                    std::getline(inFile, förnamn);
+                    std::getline(inFile, efternamn);
+                    std::getline(inFile, adress);
+                    std::getline(inFile, epost);
+                    std::getline(inFile, telefonnummer);
+                    std::getline(inFile, födelsedag);
+                    std::getline(inFile, övrigt);
+                    std::getline(inFile, streck2);
+
+                    kontakt = streck1 + "\n" + förnamn + "\n" + efternamn + "\n" + adress + "\n" +
+                              epost + "\n" + telefonnummer + "\n" + födelsedag +
+                              "\n" + övrigt + "\n" + streck2 + "\n";
+
+                    allaKontakter.push_back(kontakt);
+                }
+            }
+            inFile.close();
+
+            for (const auto &kontakt : allaKontakter)
+            {
+                std::cout << kontakt;
+            }
+
+            std::string förnamnTaBort;
+            std::cout << "Ange förnamnet på personen du vill ta bort: ";
+            std::cin >> förnamnTaBort;
+
+            std::ifstream inFile2("Kontaktbok");
+            std::vector<std::string> behållKontakt; // Här ska vi lagra de kontakter som inte ska tas bort
+            std::vector<std::string> temporärVek;   // Temporär vektor för en kontakt
+            std::string rad;
+            bool letaren = false;
+
+            while (std::getline(inFile2, rad)) // Läs filen rad för rad igen
+            {
+
+                temporärVek.push_back(rad); // Bygg upp kontaktblocket rad för rad
+
+                if (temporärVek.size() == 9) // En kontakt (block) är komplett (9 rader)
+                {
+                    if (temporärVek[1] == förnamnTaBort)
+                    {
+                        letaren = true; // Kontakt hittades, vi ska inte lägga till den i den nya listan
+                    }
+                    else
+                    {
+                        behållKontakt.insert(behållKontakt.end(), temporärVek.begin(), temporärVek.end());
+                    }
+                    temporärVek.clear(); // Rensa temporär vektor
+                }
+            }
+
+            inFile2.close(); // Stäng filen efter att vi har läst alla rader
+
+            if (letaren = true)
+            {
+                std::ofstream outFile("Kontaktbok", std::ios::trunc); // Skriv tillbaka till filen de kontakter som inte ska tas bort
+                for (const auto &kontakt : behållKontakt)
+                {
+                    outFile << kontakt << std::endl;
+                }
+                outFile.close(); // Stänger filem
+
+                std::cout << std::endl;
+                std::cout << "Kontakten med förnamnet: " << förnamnTaBort << " " << "har tagits bort." << std::endl; //Kontakt hittad
+                std::cout << std::endl;
+            }
+            else
+            {
+                std::cout << std::endl;
+                std::cout << "Ingen kontakt hittades med förnamnet: " << '"' << förnamnTaBort << '"' << std::endl; //Kontakt ej hittad, ge felmeddelande.
+                std::cout << std::endl;
+            }
+
+            break;
+        }
+
+        case 3:
+        {
+            std::ifstream inFile3("Kontaktbok"); // Öppna fil "Kontkatbok"
+            std::vector<std::string> allaKontakter;
+
+            std::string streck1, streck2, kontakt, förnamn, efternamn, adress, epost, telefonnummer, födelsedag, övrigt;
+            while (std::getline(inFile3, streck1))
+            {
+                if (streck1.empty())
+                    continue;
+                {
+                    std::getline(inFile3, förnamn);
+                    std::getline(inFile3, efternamn);
+                    std::getline(inFile3, adress);
+                    std::getline(inFile3, epost);
+                    std::getline(inFile3, telefonnummer);
+                    std::getline(inFile3, födelsedag);
+                    std::getline(inFile3, övrigt);
+                    std::getline(inFile3, streck2);
+
+                    kontakt = streck1 + "\n" + förnamn + "\n" + efternamn + "\n" + adress + "\n" +
+                              epost + "\n" + telefonnummer + "\n" + födelsedag +
+                              "\n" + övrigt + "\n" + streck2 + "\n";
+
+                    allaKontakter.push_back(kontakt);
+                }
+            }
+            inFile3.close();
+
+            std::string förnamnSök;
+            std::cout << "Ange förnamnet på personen du vill söka efter: ";
+            std::cin >> förnamnSök;
+            bool kontaktHittad = false;
+
+            for (const auto &kontakt : allaKontakter)
+            {
+                std::stringstream innehåll2(kontakt); // Första raden av varje kontaktblock är strecket, vi måste kolla om förnamnet finns
+                std::getline(innehåll2, streck1); // Läs streck (första raden av blocket)
+                std::getline(innehåll2, förnamn); // Läs förnamnet (andra raden av blocket)
+
+                if (förnamn == förnamnSök) // Jämför om förnamnet i kontaktbok är detsamma som det användaren skrev
+                {
+                    std::cout << std::endl;
+                    std::cout << "Kontakt hittad: " << std::endl;
+                    std::cout << std::endl;
+                    std::cout << std::endl;
+                    std::cout << kontakt; // Visa hela kontaktinformationen
+                    std::cout << std::endl;
+                    std::cout << std::endl;
+                    kontaktHittad = true;
+                    break; // Sluta leta om vi har hittat kontakten
+                }
+            }
+
+            if (!kontaktHittad)
+            {
+                std::cout << std::endl;
+                std::cout << "Ingen kontakt hittades med förnamnet: " << förnamnSök << std::endl;
+                std::cout << std::endl;
+            }
+
+            break;
+        }
+
+        case 4:
+        {
+            programKör = false;
+            break;
+        }
+
+        default:
+        {
+            std::cout << std::endl;
+            std::cout << "Ogiltigt val. Försök igen." << std::endl;
+            std::cout << std::endl;
+            break;
+        }
+
+            return 0;
+        }
+    }
+}

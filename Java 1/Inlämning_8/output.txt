@@ -1,0 +1,319 @@
+Ålder: 0
+Totalt antal: 119046
+--------------------
+Ålder: 1
+Totalt antal: 119595
+--------------------
+Ålder: 2
+Totalt antal: 119727
+--------------------
+Ålder: 3
+Totalt antal: 119696
+--------------------
+Ålder: 4
+Totalt antal: 119570
+--------------------
+Ålder: 5
+Totalt antal: 119390
+--------------------
+Ålder: 6
+Totalt antal: 119142
+--------------------
+Ålder: 7
+Totalt antal: 118904
+--------------------
+Ålder: 8
+Totalt antal: 118674
+--------------------
+Ålder: 9
+Totalt antal: 118458
+--------------------
+Ålder: 10
+Totalt antal: 118225
+--------------------
+Ålder: 11
+Totalt antal: 118022
+--------------------
+Ålder: 12
+Totalt antal: 117858
+--------------------
+Ålder: 13
+Totalt antal: 117726
+--------------------
+Ålder: 14
+Totalt antal: 117647
+--------------------
+Ålder: 15
+Totalt antal: 117686
+--------------------
+Ålder: 16
+Totalt antal: 117832
+--------------------
+Ålder: 17
+Totalt antal: 118216
+--------------------
+Ålder: 18
+Totalt antal: 118872
+--------------------
+Ålder: 19
+Totalt antal: 119403
+--------------------
+Ålder: 20
+Totalt antal: 120229
+--------------------
+Ålder: 21
+Totalt antal: 121295
+--------------------
+Ålder: 22
+Totalt antal: 122702
+--------------------
+Ålder: 23
+Totalt antal: 124442
+--------------------
+Ålder: 24
+Totalt antal: 126364
+--------------------
+Ålder: 25
+Totalt antal: 128212
+--------------------
+Ålder: 26
+Totalt antal: 129846
+--------------------
+Ålder: 27
+Totalt antal: 131178
+--------------------
+Ålder: 28
+Totalt antal: 132108
+--------------------
+Ålder: 29
+Totalt antal: 132707
+--------------------
+Ålder: 30
+Totalt antal: 133005
+--------------------
+Ålder: 31
+Totalt antal: 133024
+--------------------
+Ålder: 32
+Totalt antal: 132818
+--------------------
+Ålder: 33
+Totalt antal: 132424
+--------------------
+Ålder: 34
+Totalt antal: 131923
+--------------------
+Ålder: 35
+Totalt antal: 131339
+--------------------
+Ålder: 36
+Totalt antal: 130731
+--------------------
+Ålder: 37
+Totalt antal: 130138
+--------------------
+Ålder: 38
+Totalt antal: 129495
+--------------------
+Ålder: 39
+Totalt antal: 129204
+--------------------
+Ålder: 40
+Totalt antal: 128647
+--------------------
+Ålder: 41
+Totalt antal: 128054
+--------------------
+Ålder: 42
+Totalt antal: 127515
+--------------------
+Ålder: 43
+Totalt antal: 126876
+--------------------
+Ålder: 44
+Totalt antal: 126078
+--------------------
+Ålder: 45
+Totalt antal: 125497
+--------------------
+Ålder: 46
+Totalt antal: 125493
+--------------------
+Ålder: 47
+Totalt antal: 123859
+--------------------
+Ålder: 48
+Totalt antal: 120973
+--------------------
+Ålder: 49
+Totalt antal: 117002
+--------------------
+Ålder: 50
+Totalt antal: 116001
+--------------------
+Ålder: 51
+Totalt antal: 113835
+--------------------
+Ålder: 52
+Totalt antal: 114109
+--------------------
+Ålder: 53
+Totalt antal: 114332
+--------------------
+Ålder: 54
+Totalt antal: 117690
+--------------------
+Ålder: 55
+Totalt antal: 123617
+--------------------
+Ålder: 56
+Totalt antal: 130213
+--------------------
+Ålder: 57
+Totalt antal: 133654
+--------------------
+Ålder: 58
+Totalt antal: 137313
+--------------------
+Ålder: 59
+Totalt antal: 138160
+--------------------
+Ålder: 60
+Totalt antal: 138120
+--------------------
+Ålder: 61
+Totalt antal: 131215
+--------------------
+Ålder: 62
+Totalt antal: 127488
+--------------------
+Ålder: 63
+Totalt antal: 120693
+--------------------
+Ålder: 64
+Totalt antal: 117650
+--------------------
+Ålder: 65
+Totalt antal: 114012
+--------------------
+Ålder: 66
+Totalt antal: 109269
+--------------------
+Ålder: 67
+Totalt antal: 106430
+--------------------
+Ålder: 68
+Totalt antal: 105919
+--------------------
+Ålder: 69
+Totalt antal: 105086
+--------------------
+Ålder: 70
+Totalt antal: 105886
+--------------------
+Ålder: 71
+Totalt antal: 103218
+--------------------
+Ålder: 72
+Totalt antal: 99036
+--------------------
+Ålder: 73
+Totalt antal: 99106
+--------------------
+Ålder: 74
+Totalt antal: 98975
+--------------------
+Ålder: 75
+Totalt antal: 100795
+--------------------
+Ålder: 76
+Totalt antal: 103017
+--------------------
+Ålder: 77
+Totalt antal: 99899
+--------------------
+Ålder: 78
+Totalt antal: 98613
+--------------------
+Ålder: 79
+Totalt antal: 96396
+--------------------
+Ålder: 80
+Totalt antal: 90418
+--------------------
+Ålder: 81
+Totalt antal: 85941
+--------------------
+Ålder: 82
+Totalt antal: 85692
+--------------------
+Ålder: 83
+Totalt antal: 85784
+--------------------
+Ålder: 84
+Totalt antal: 81584
+--------------------
+Ålder: 85
+Totalt antal: 76098
+--------------------
+Ålder: 86
+Totalt antal: 69948
+--------------------
+Ålder: 87
+Totalt antal: 58919
+--------------------
+Ålder: 88
+Totalt antal: 50058
+--------------------
+Ålder: 89
+Totalt antal: 42400
+--------------------
+Ålder: 90
+Totalt antal: 35564
+--------------------
+Ålder: 91
+Totalt antal: 30002
+--------------------
+Ålder: 92
+Totalt antal: 24442
+--------------------
+Ålder: 93
+Totalt antal: 19725
+--------------------
+Ålder: 94
+Totalt antal: 15342
+--------------------
+Ålder: 95
+Totalt antal: 11513
+--------------------
+Ålder: 96
+Totalt antal: 8290
+--------------------
+Ålder: 97
+Totalt antal: 6058
+--------------------
+Ålder: 98
+Totalt antal: 4171
+--------------------
+Ålder: 99
+Totalt antal: 2787
+--------------------
+Ålder: 100
+Totalt antal: 1913
+--------------------
+Ålder: 101
+Totalt antal: 1275
+--------------------
+Ålder: 102
+Totalt antal: 816
+--------------------
+Ålder: 103
+Totalt antal: 489
+--------------------
+Ålder: 104
+Totalt antal: 281
+--------------------
+Ålder: 105
+Totalt antal: 297
+--------------------
+Totalt antal: 10516421

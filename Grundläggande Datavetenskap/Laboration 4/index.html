@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<!--Title är texten längst up i fliken-->
+    <title>Min första hemsida!</title>                                         
+</head>
+<!--style tillåter mig att ändra utseenden på X antal saker, nämner exempel i koden nedan-->
+<body                                                           
+    style="background-color: grey;">
+<!--Inom h1 så har jag ändrat fontsize, färgen, nyans på texten.-->                         
+<h1                                                            
+    style="font-size: 50px;                                   
+    color:white;
+    -webkit-text-stroke: 1.5px black;"
+    >Välkommen till min hemsida!
+</h1>
+<!--<hr> gör så att det blir en linje-->
+<hr>
+<!--<br> gör så att allt "droppas" en linje-->
+<br>
+<br>
+<!--Här ser vi att jag har en attribut med en href. Detta behövs för att man ska kunna klicka på knappen/bilden och för att den 
+ska en funktion, dvs att den tar dig till en annan hemsida. target=_blank betyder att när jag klickar på den knappen så öppnas
+den i en annan flik, bakgrundsfärgen bytt till grå, textfärgen är vit, textstorleken 30px, border radius ändrar "rundheten" på 
+knappen, borderstyle lägger en nyans på utsidan av knappen, padding ändrar "storleken" på knappen, bordercolor ändrar färgen på 
+den yttre nyansen och sista koden gör så att om man har musen över knappen så kommer det ett meddelande med en liten text.-->
+<a href="mailto:test91@hotmail.com" 
+    target=_blank 
+    style="background-color:#444444;
+    color:white;
+    font-size: 30px;
+    text-decoration: none;
+    border-radius: 10px;
+    border-style: outset;
+    padding: 10px;
+    border-color:white;" 
+    title="Skicka ett mail!" >Klicka här för att skicka mail! 
+</a>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<!--Här har jag lagt in en href fast med en bild, vilket innebär att om man klickar på bilden så kommer man till en annan hemsida.
+I detta fall så är det MIUNs hemsida då jag har en bild på MIUNS logga på hemsidan. Annars så är resten av koden samma som jag 
+nämnde i brödtexten ovan.-->
+<a href="https://www.miun.se/" target=_blank>
+    <img src="MIUNLoggan.png"
+    alt="MIUN Loggan"
+    style="width: 275px; height: 125px; 
+    border-style: outset;
+    border-radius: 10px;
+    border-color: white;
+    padding: 50px;
+    border-width: 5px;" 
+    title="Mittuniversistet">
+</a>
+    
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<!--Här kan vi se att jag gjort samma sak som jag gjort uppe men med en liten twist i slutet av koden, position: absolute & left: 1250px.
+Detta tillåter mig att flytta på knappen till höger, och pixlarna beslutar hur mycket jag flyttar den.-->
+<a href="Sida2.html" 
+    style="background-color:#444444;
+    color: white;
+    font-size: 17px;
+    text-decoration: none;
+    border-radius: 10px;
+    border-style: outset;
+    padding: 10px;
+    border-color:white;
+    float: right"
+    title="Sida 2!">Klicka här för att öppna sida 2!
+</a>
+
+</body>
+</html>

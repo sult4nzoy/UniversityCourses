@@ -1,0 +1,44 @@
+Basrelationer – djursjukhus
+PK = primarykey, FK = foreignkey
+
+Hospital
+HospitalID PK
+Attributes = name, phonenumber, adress, state, city, zip
+
+
+Provided_in
+ServiceID = FK -> Service(ServiceID)
+Visitid = FK -> Visit(VisitID)
+
+Provides
+EmployeeID = FK -> Employee(EmployeeID)
+ServiceID = FK->Service(ServiceID)
+
+
+Performed_by
+EmployeeID = FK ->Employee(EmployeeID)
+VisitID = FK ->Visit(VisitID)
+
+
+Employee
+PK = EmployeeID
+FK_Hospital_Employee -> HospitalID(Hospital)
+Attributes = firstname, lastname, degree, hiredate, adress, zip, city, homephone
+
+Customer
+PK = CustomerID
+FK_Hospital_Customer -> HospitalID(Hospital)
+Attributes = name, phonenumber, typeofcustomer, adress, zip, state, city, faxnumber
+
+Pet
+PK = PetID
+FK_Customer_Pet -> Customer(CustomerID)
+Attributes = typeofanimal, gender, breed, DoB, Petname
+
+Visit
+PK = VisitID
+Attributes = visitdate
+
+Service
+PK = serviceID
+Attributes = price, notes, treatment
