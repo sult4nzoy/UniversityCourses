@@ -7,4 +7,6 @@ add_executable(Labb5CLION main.cpp
         Car.cpp
         Car.h
         MyPrint.cpp
-        MyPrint.h)
+        MyPrint.h
+        GreaterThan.cpp
+        GreaterThan.h)
