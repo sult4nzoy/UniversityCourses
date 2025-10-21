@@ -1,8 +1,8 @@
 #include <algorithm>
-// #include <iostream>
-
+#include <numeric>
 #include "Car.h"
 #include "GreaterThan.h"
+#include "MyBinOp.h"
 #include "MyPrint.h"
 
 int main() {
@@ -77,14 +77,26 @@ int main() {
     subSequence.push_back(cars[5]);
     subSequence.push_back(cars[6]);
     auto subSeqFound = std::search(cars.begin(), cars.end(), subSequence.begin(), subSequence.end());
-    auto idx = subSeqFound - cars.begin();
+    auto found_at_idx = subSeqFound - cars.begin();
+
     if (subSeqFound != cars.end()) {
-        std::cout << "Hittade subSequence från index: " << idx << std::endl;
+        std::cout << "Hittade subSequence från index: " << found_at_idx << std::endl;
+        for (auto const &c : subSequence) {
+            printer(c);
+        }
+    }
+    else {
+        std::cout << "Hittade ej subSequence" << std::endl;
     }
     std::cout << "-------------------------------------------------------" << std::endl;
     std::cout << std::endl;
     std::cout << "-------------------------------------------------------" << std::endl;
-    std::cout << "6. Kolla om arrayen och vectorn har samma innehåll, det görs med std::equal" << std::endl;
+    std::cout << "6. Hitta medelvärdet (vikt) av alla bilar i vec med std::accumulate" << std::endl;
+    MyBinOp mbo;
+    double init = 0.0;
+    auto avg = std::accumulate(cars.begin(), cars.end(), init, mbo);
+    auto mean = avg / cars.size();
+    std::cout << "Mean: " << mean << " kg" <<std::endl;
 
     return 0;
 }
