@@ -5,4 +5,6 @@ set(CMAKE_CXX_STANDARD 20)
 
 add_executable(Labb5CLION main.cpp
         Car.cpp
-        Car.h)
+        Car.h
+        MyPrint.cpp
+        MyPrint.h)
