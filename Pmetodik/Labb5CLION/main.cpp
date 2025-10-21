@@ -11,7 +11,7 @@ int main() {
 
         Car("Audi", 1543),
         Car("BMW", 1367),
-        Car("Toyota", 1465),
+        Car("Audi", 1465),
         Car("Subaru", 1187),
         Car("Honda", 1987),
         Car("Volvo", 2500),
@@ -38,14 +38,25 @@ int main() {
     std::cout << "2. Hitta första objektet som har en weight > 1564  med find_if och dens position" << std::endl;
 
     auto findings = std::find_if(cars.begin(), cars.end(), GreaterThan(1564));
-    auto findingspot = findings - cars.begin();
+    auto Findingpot = findings - cars.begin();
     if (findings != cars.end()) {
         printer(*findings);
     }
-    std::cout << "Ovan hittades i index " << findingspot << std::endl;
+    else {
+        std::cout << "Hitta ej" << std::endl;
+    }
+    std::cout << "Ovan hittades i index " << Findingpot << std::endl;
     std::cout << "-------------------------------------------------------" << std::endl;
     std::cout << std::endl;
-    std::cout << "---3---" << std::endl;
+    std::cout << "3. Gå igenom vector med adjacent_find och hitta alla bilar med samma namn." << std::endl;
+    auto SameName = std::adjacent_find(cars.begin(), cars.end());
+    if (SameName != cars.end()) {
+        printer(*SameName);
+    }
+    else {
+        std::cout << "Hitta ej" << std::endl;
+    }
+    std::cout << "-------------------------------------------------------" << std::endl;
 
     return 0;
 }
