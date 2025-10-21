@@ -4,6 +4,7 @@
 #include "GreaterThan.h"
 #include "MyBinOp.h"
 #include "MyPrint.h"
+#include "MyUnOp.h"
 
 int main() {
     const int arrsize = 10;
@@ -97,6 +98,21 @@ int main() {
     auto avg = std::accumulate(cars.begin(), cars.end(), init, mbo);
     auto mean = avg / cars.size();
     std::cout << "Mean: " << mean << " kg" <<std::endl;
+
+    std::cout << std::endl;
+    std::cout << "-------------------------------------------------------" << std::endl;
+    std::cout << "7. skapa v2 vec och hämta vikten från vec1 och använd transform" << std::endl;
+    std::vector<double> carsV2;
+    carsV2.resize(cars.size());
+    MyUnOp mup;
+    std::transform(cars.begin(), cars.end(), carsV2.begin(), mup);
+    for (auto const &c : carsV2) {
+        std::cout << c << " kg"<< std::endl;
+    }
+    std::cout << std::endl;
+    std::cout << "-------------------------------------------------------" << std::endl;
+    std::cout << "8. " << std::endl;
+
 
     return 0;
 }

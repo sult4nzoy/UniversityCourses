@@ -11,4 +11,6 @@ add_executable(Labb5CLION main.cpp
         GreaterThan.cpp
         GreaterThan.h
         MyBinOp.cpp
-        MyBinOp.h)
+        MyBinOp.h
+        MyUnOp.cpp
+        MyUnOp.h)
