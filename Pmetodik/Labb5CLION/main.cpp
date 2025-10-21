@@ -5,6 +5,7 @@
 #include "MyBinOp.h"
 #include "MyPrint.h"
 #include "MyUnOp.h"
+#include "MyFunc.h"
 
 int main() {
     const int arrsize = 10;
@@ -111,8 +112,19 @@ int main() {
     }
     std::cout << std::endl;
     std::cout << "-------------------------------------------------------" << std::endl;
-    std::cout << "8. " << std::endl;
-
+    std::cout << "8. Ersätt gamla xi värden med nya, genom att använda transform" << std::endl;
+    MyFunc mf(mean);
+    std::transform(carsV2.begin(), carsV2.end(), carsV2.begin(), mf);
+    for (auto const &c : carsV2) {
+        std::cout << c << " kg"<< std::endl;
+    }
+    std::cout << std::endl;
+    std::cout << "-------------------------------------------------------" << std::endl;
+    std::cout << "9. Sort" << std::endl;
+    std::sort(carsV2.begin(), carsV2.end());
+    for (auto const &c : carsV2) {
+        std::cout << c << " kg"<< std::endl;
+    }
 
     return 0;
 }
