@@ -9,11 +9,9 @@ int main()
     {
         // uppdatera game logik
         game.updateGame();
-        
         BeginDrawing();
         ClearBackground(SKYBLUE);
         EndDrawing();
-
     }
 
     return 0;

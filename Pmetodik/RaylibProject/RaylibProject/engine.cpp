@@ -8,6 +8,8 @@ Engine::Engine()
 
 Engine::~Engine()
 {
+	sand.clear();
+	water.clear();
 	CloseWindow();
 }
 
@@ -28,6 +30,13 @@ int Engine::getMousePositionY()
 
 void Engine::updateGame()
 {
+	//rensa vec om spelaren trycker R
+	if (IsKeyPressed(KEY_R))
+	{
+		sand.clear();
+		water.clear();
+	}
+
 	//skapa sand objekt och lägg i sand vec
 	if (IsMouseButtonDown(MOUSE_LEFT_BUTTON))
 	{
@@ -63,28 +72,20 @@ void Engine::updateGame()
 		else
 		{
 			int randomDir = rand() % 2;
-			// 0 = left, else = right
+			// 0 = vänster, else = höger
 
 			if (randomDir == 0)
 			{
-				if (isPositionBelowEmpty(s.getX() - 5, s.getY()))  // Check BELOW left position
+				if (isPositionBelowEmpty(s.getX() - 5, s.getY()))  // kolla diagonalt vänster ned
 				{
-					s.setPosition(s.getX() - 5, s.getY());  // Move left only
-				}
-				else if (isPositionBelowEmpty(s.getX() + 5, s.getY()))  // Check BELOW right position
-				{
-					s.setPosition(s.getX() + 5, s.getY());  // Move right only
+					s.setPosition(s.getX() - 5, s.getY());  // gå vänster
 				}
 			}
 			else
 			{
-				if (isPositionBelowEmpty(s.getX() + 5, s.getY()))  // Check BELOW right position
+				if (isPositionBelowEmpty(s.getX() + 5, s.getY()))  // kolla diagonalt höger ned
 				{
-					s.setPosition(s.getX() + 5, s.getY());  // Move right only
-				}
-				else if (isPositionBelowEmpty(s.getX() - 5, s.getY()))  // Check BELOW left position
-				{
-					s.setPosition(s.getX() - 5, s.getY());  // Move left only
+					s.setPosition(s.getX() + 5, s.getY());  // gå höger
 				}
 			}
 		}
@@ -108,7 +109,7 @@ void Engine::updateGame()
 		}
 	}
 
-	// Draw water level background
+	// höj vattnet, waterLevelRise bestämmer höjden
 	if (waterLevelRise > 0)
 	{
 		DrawRectangle(0, screenHeight - 30 - waterLevelRise, screenWidth, waterLevelRise, BLUE);
@@ -134,9 +135,6 @@ bool Engine::isPositionBelowEmpty(int x, int y)
 {
 	int checkY = y + 5;
 
-	// Check floor collision first
-	if (checkY + 5 > screenHeight - 30) return false;
-
 	for (auto const& s : sand)
 	{
 		if (s.getX() == x && s.getY() == checkY)
@@ -149,7 +147,10 @@ bool Engine::isPositionBelowEmpty(int x, int y)
 
 void Engine::displayTexts()
 {
-	DrawText(TextFormat("FPS: %d", GetFPS()), 20, 20, 20, WHITE);
-	DrawText(TextFormat("Sand: %d", sand.size()), 20, 45, 20, WHITE);
-	DrawText(TextFormat("Water: %d", water.size()), 20, 65, 20, WHITE);
+	DrawText(TextFormat("FPS: %d", GetFPS()), 1080, 15, 20, WHITE);
+	DrawText(TextFormat("Sand: %d", sand.size()), 1080, 45, 20, WHITE);
+	DrawText(TextFormat("Water: %d", water.size()), 1080, 75, 20, WHITE);
+	DrawText(TextFormat("Press R to delete sand and water"), 20, 15, 20, WHITE);
+	DrawText(TextFormat("Press MouseButton1 to spawn sand"), 20, 45, 20, WHITE);
+	DrawText(TextFormat("Press MouseButton2 to spawn water"), 20, 75, 20, WHITE);
 }
