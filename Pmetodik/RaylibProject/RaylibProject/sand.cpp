@@ -45,15 +45,6 @@ void Sand::setPosition(int x, int y)
 	yPos = y;
 }
 
-
-void Sand::dontGoBelowFloor(int floorY)
-{
-	if (yPos + height > floorY)
-	{
-		yPos = floorY - height;
-	}
-}
-
 Color Sand::randomColor()
 {
 	Color yellow = YELLOW;

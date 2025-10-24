@@ -19,12 +19,10 @@ public:
 	virtual int getHeight() const = 0;
 	virtual void Gravity() = 0;
 	virtual void setPosition(int x, int y) = 0;
-	virtual void dontGoBelowFloor(int floorY) = 0;
 
 
 
-	//virtual bool collisionDetection() = 0;
+
 
 };
 
-//när sand touchar vatten, så ska sand velocity bli segare så att "sanden faller mindre" i vattnet.

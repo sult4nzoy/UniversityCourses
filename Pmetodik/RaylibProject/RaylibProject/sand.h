@@ -17,7 +17,5 @@ public:
 	int getHeight() const override;
 	void Gravity() override;
 	void setPosition(int x, int y) override;
-	void dontGoBelowFloor(int floorY) override;
 	Color randomColor();
-	//bool collisionDetection() override;
 };

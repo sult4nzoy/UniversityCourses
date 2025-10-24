@@ -21,6 +21,7 @@ public:
     bool isPositionBelowEmpty(int x, int y);
     void displayTexts();
 
+
 private:
     const char* gameTitle = "Sand Box Engine";
     int FPS = 120;

@@ -44,10 +44,3 @@ void Water::setPosition(int x, int y)
 	yPos = y;
 }
 
-void Water::dontGoBelowFloor(int floorY)
-{
-	if (yPos + height > floorY)
-	{
-		yPos = floorY - height;
-	}
-}
