@@ -1,4 +1,6 @@
 #include "engine.h"
+
+
 int main()
 {
     Engine game;
@@ -9,7 +11,7 @@ int main()
         game.updateGame();
         
         BeginDrawing();
-        ClearBackground(BLACK);
+        ClearBackground(SKYBLUE);
         EndDrawing();
 
     }

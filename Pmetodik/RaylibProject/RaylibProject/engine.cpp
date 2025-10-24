@@ -16,12 +16,12 @@ void Engine::DrawFloor() const
 	DrawRectangle(0, screenHeight - 30, screenWidth, 30, BROWN);
 }
 
-float Engine::getMousePositionX()
+int Engine::getMousePositionX()
 {
     return static_cast<int>(GetMousePosition().x);
 }
 
-float Engine::getMousePositionY()
+int Engine::getMousePositionY()
 {
 	return static_cast<int>(GetMousePosition().y);
 }
@@ -31,25 +31,25 @@ void Engine::updateGame()
 	//skapa sand objekt och lägg i sand vec
 	if (IsMouseButtonDown(MOUSE_LEFT_BUTTON))
 	{
-		sand.push_back(Sand(getMousePositionX(), getMousePositionY()));
+		int mouseX = getMousePositionX();
+		int mouseY = getMousePositionY();
 
-	}
+		mouseX = (mouseX / 5) * 5;
+		mouseY = (mouseY / 5) * 5;
+		sand.push_back(Sand(mouseX, mouseY));
 
-	//rita sand obejtk
-	for (auto const& s : sand)
-	{
-		s.drawElement();
 	}
 
 	//skapa vatten objekt och lägg i water vec
 	if (IsMouseButtonDown(MOUSE_RIGHT_BUTTON))
 	{
-		water.push_back(Water(getMousePositionX(), getMousePositionY()));
-	}
-	//rita vatten objekt
-	for (auto const& w : water)
-	{
-		w.drawElement();
+		int mouseX = getMousePositionX();
+		int mouseY = getMousePositionY();
+
+
+		mouseX = int(mouseX / 5) * 5;
+		mouseY = int(mouseY / 5) * 5;
+		water.push_back(Water(mouseX, mouseY));
 	}
 
 	//uppdatera sand physics
@@ -107,26 +107,36 @@ void Engine::updateGame()
 			w.dontGoBelowFloor(screenHeight - 30);
 		}
 	}
+
+	//rita vatten objekt
+	for (auto const& w : water)
+	{
+		w.drawElement();
+	}
+
+	//rita sand obejtk
+	for (auto const& s : sand)
+	{
+		s.drawElement();
+	}
+
 	displayTexts();
 	DrawFloor();
 }
 
-bool Engine::isPositionBelowEmpty(float x, float y)
+bool Engine::isPositionBelowEmpty(int x, int y)
 {
-	if (!sand.empty()) 
+	int checkY = y + 5;
+	if (checkY >= screenHeight - 30) //om den är vid golvet
 	{
-		float elementHeight = sand[0].getHeight();
-		float checkY = y + elementHeight;
+		return false;
+	}
 
-		for (const auto& s : sand)
+	for (auto const &s : sand)
+	{
+		if (s.getX() == x && s.getY() == checkY)
 		{
-			if (x < s.getX() + s.getWidth() &&
-				x + s.getWidth() > s.getX() &&
-				checkY < s.getY() + s.getHeight() &&
-				checkY + s.getHeight() > s.getY())
-			{
-				return false;
-			}
+			return false;
 		}
 	}
 	return true;
@@ -138,3 +148,4 @@ void Engine::displayTexts()
 	DrawText(TextFormat("Sand: %d", sand.size()), 20, 45, 20, WHITE);
 	DrawText(TextFormat("Water: %d", water.size()), 20, 65, 20, WHITE);
 }
+

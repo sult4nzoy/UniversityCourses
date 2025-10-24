@@ -15,10 +15,10 @@ public:
 	Engine();
 	~Engine();
     void DrawFloor() const;
-    float getMousePositionX();
-	float getMousePositionY();
+    int getMousePositionX();
+	int getMousePositionY();
     void updateGame();
-    bool isPositionBelowEmpty(float x, float y);
+    bool isPositionBelowEmpty(int x, int y);
     void displayTexts();
 
 private:

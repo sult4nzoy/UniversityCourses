@@ -4,19 +4,19 @@
 class Water : public Element
 {
 private:
-	float xPos;
-	float yPos;
+	int xPos;
+	int yPos;
 
 public:
-	Water(float x, float y);
+	Water(int x, int y);
 	std::string getType() override;
-	float getX() const;
-	float getY() const;
+	int getX() const;
+	int getY() const;
 	void drawElement() const override;
 	int getWidth() const override;
 	int getHeight() const override;
 	void Gravity() override;
-	void setPosition(float x, float y) override;
+	void setPosition(int x, int y) override;
 	void dontGoBelowFloor(int floorY) override;
 
 	//bool collisionDetection() override;
