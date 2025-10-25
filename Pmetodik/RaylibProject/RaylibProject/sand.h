@@ -18,4 +18,6 @@ public:
 	void Gravity() override;
 	void setPosition(int x, int y) override;
 	Color randomColor();
+	void slowDownGravity();
+	void updateGravity(int velocity);
 };

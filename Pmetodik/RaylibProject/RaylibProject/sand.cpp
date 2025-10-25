@@ -1,6 +1,6 @@
 #include "sand.h"
 
-Sand::Sand(int x, int y) : Element(5, 5, 0, randomColor()), xPos(x), yPos(y)
+Sand::Sand(int x, int y) : Element(5, 5, 5, randomColor()), xPos(x), yPos(y)
 {
 }
 
@@ -36,7 +36,7 @@ int Sand::getHeight() const
 
 void Sand::Gravity()
 {
-	yPos += velocity + 5;
+	yPos += velocity;
 }
 
 void Sand::setPosition(int x, int y)
@@ -53,4 +53,14 @@ Color Sand::randomColor()
 	Color randomColors[3] = {yellow, lightYellow, darkYellow};
 	int randomIndex = rand() % 3;
 	return randomColors[randomIndex];
+}
+
+void Sand::updateGravity(int velocity)
+{
+	this->velocity = velocity;
+}
+
+void Sand::slowDownGravity()
+{
+	velocity = 1;
 }

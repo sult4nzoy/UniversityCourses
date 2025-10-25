@@ -60,17 +60,31 @@ void Engine::updateGame()
 	}
 
 	// vattenhöjd
-	int waterLevelRise = static_cast<int>((water.size() / 100) * 20); // 20 pixlar rise per 100 objekt
+	int waterLevelRise = static_cast<int>((water.size() / 50) * 20); // 20 pixlar rise per 50 objekt
+	int currentWaterLevel = screenHeight - 30 - waterLevelRise;
 
 	//uppdatera sand physics
 	for (auto& s : sand)
 	{
+		bool isInWater = s.getY() >= currentWaterLevel;
+
 		if (isPositionBelowEmpty(s.getX(), s.getY()))
 		{
+			if (isInWater)
+			{
+				s.slowDownGravity();
+			}
+			else
+			{
+				s.updateGravity(5);
+			}
+
 			s.Gravity();
 		}
 		else
 		{
+			s.updateGravity(5);
+
 			int randomDir = rand() % 2;
 			// 0 = vänster, else = höger
 

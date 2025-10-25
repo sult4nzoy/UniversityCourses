@@ -49,5 +49,11 @@ int main()
     std::cout << "Maximum värdet: " << maxVärdet << std::endl;
     std::cout << "Medelvärdet: " << medelvärdet << std::endl;
 
+    int x = 10;
+    int* p = &x;
+    std::cout << p << std::endl;
+
+
+
     return 0;
 }
