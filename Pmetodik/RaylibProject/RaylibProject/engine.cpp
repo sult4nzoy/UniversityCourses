@@ -8,8 +8,7 @@ Engine::Engine()
 
 Engine::~Engine()
 {
-	sand.clear();
-	water.clear();
+	elements.clear();
 	CloseWindow();
 }
 
@@ -30,128 +29,112 @@ int Engine::getMousePositionY()
 
 void Engine::updateGame()
 {
-	//rensa vec om spelaren trycker R
-	if (IsKeyPressed(KEY_R))
-	{
-		sand.clear();
-		water.clear();
-	}
+    if (IsKeyPressed(KEY_R))
+    {
+        elements.clear();
+    }
 
-	//skapa sand objekt och lägg i sand vec
-	if (IsMouseButtonDown(MOUSE_LEFT_BUTTON))
-	{
-		int mouseX = getMousePositionX();
-		int mouseY = getMousePositionY();
+    if (IsMouseButtonDown(MOUSE_LEFT_BUTTON))
+    {
+        int mouseX = getMousePositionX();
+        int mouseY = getMousePositionY();
+        mouseX = (mouseX / 5) * 5;
+        mouseY = (mouseY / 5) * 5;
+        elements.push_back(std::make_unique<Sand>(mouseX, mouseY));
+    }
 
-		mouseX = (mouseX / 5) * 5;
-		mouseY = (mouseY / 5) * 5;
-		sand.push_back(Sand(mouseX, mouseY));
-	}
+    if (IsMouseButtonDown(MOUSE_RIGHT_BUTTON))
+    {
+        int mouseX = getMousePositionX();
+        int mouseY = getMousePositionY();
+        mouseX = int(mouseX / 5) * 5;
+        mouseY = int(mouseY / 5) * 5;
+        elements.push_back(std::make_unique<Water>(mouseX, mouseY));
+    }
 
-	//skapa vatten objekt och lägg i water vec
-	if (IsMouseButtonDown(MOUSE_RIGHT_BUTTON))
-	{
-		int mouseX = getMousePositionX();
-		int mouseY = getMousePositionY();
+    //räknar ut antal vatten objekt
+    auto waters = getElementsOfType<Water>();
+    size_t waterLevelRise = (waters.size() / 50) * 20;
+    int currentWaterLevel = screenHeight - 30 - static_cast<int>(waterLevelRise);
 
-		mouseX = int(mouseX / 5) * 5;
-		mouseY = int(mouseY / 5) * 5;
-		water.push_back(Water(mouseX, mouseY));
-	}
+    //sand physics
+    for (Sand* sand : getElementsOfType<Sand>()) 
+    {
+        bool isInWater = sand->getY() >= currentWaterLevel;
 
-	// vattenhöjd
-	int waterLevelRise = static_cast<int>((water.size() / 50) * 20); // 20 pixlar rise per 50 objekt
-	int currentWaterLevel = screenHeight - 30 - waterLevelRise;
+        if (isPositionBelowEmpty(sand->getX(), sand->getY())) 
+        {
+            if (isInWater) 
+            {
+                sand->slowDownGravity();
+            }
+            else 
+            {
+                sand->updateGravity(5);
+            }
+            sand->Gravity();
+        }
+        else 
+        {
+            sand->updateGravity(5);
 
-	//uppdatera sand physics
-	for (auto& s : sand)
-	{
-		bool isInWater = s.getY() >= currentWaterLevel;
+            int randomDir = rand() % 2;
 
-		if (isPositionBelowEmpty(s.getX(), s.getY()))
-		{
-			if (isInWater)
-			{
-				s.slowDownGravity();
-			}
-			else
-			{
-				s.updateGravity(5);
-			}
+            if (randomDir == 0) 
+            {
+                if (isPositionBelowEmpty(sand->getX() - 5, sand->getY())) 
+                {
+                    sand->setPosition(sand->getX() - 5, sand->getY());
+                }
+            }
+            else 
+            {
+                if (isPositionBelowEmpty(sand->getX() + 5, sand->getY())) 
+                {
+                    sand->setPosition(sand->getX() + 5, sand->getY());
+                }
+            }
+        }
 
-			s.Gravity();
-		}
-		else
-		{
-			s.updateGravity(5);
+		//golv kollission
+        if (sand->getY() + sand->getHeight() > screenHeight - 30) {
+            sand->setPosition(sand->getX(), screenHeight - 30);
+        }
+    }
 
-			int randomDir = rand() % 2;
-			// 0 = vänster, else = höger
+    //vatten physics
+    for (Water* water : getElementsOfType<Water>()) {
+        water->Gravity();
 
-			if (randomDir == 0)
-			{
-				if (isPositionBelowEmpty(s.getX() - 5, s.getY()))  // kolla diagonalt vänster ned
-				{
-					s.setPosition(s.getX() - 5, s.getY());  // gå vänster
-				}
-			}
-			else
-			{
-				if (isPositionBelowEmpty(s.getX() + 5, s.getY()))  // kolla diagonalt höger ned
-				{
-					s.setPosition(s.getX() + 5, s.getY());  // gå höger
-				}
-			}
-		}
+		//golv kollission
+        if (water->getY() + water->getHeight() > screenHeight - 30) 
+        {
+            water->setPosition(water->getX(), screenHeight - 30);
+        }
+    }
 
-		//collision med golv 
-		if (s.getY() + s.getHeight() > screenHeight - 30)
-		{
-			s.setPosition(s.getX(), screenHeight - 30);
-		}
-	}
+    if (waterLevelRise > 0) 
+    {
+        DrawRectangle(0, screenHeight - 30 - static_cast<int>(waterLevelRise),
+            screenWidth, static_cast<int>(waterLevelRise), BLUE);
+    }
 
-	//uppdatera vatten physics
-	for (auto& w : water)
-	{
-		w.Gravity();
+    for (auto const& e : elements) 
+    {
+        e->drawElement();
+    }
 
-		//collision med golv
-		if (w.getY() + w.getHeight() > screenHeight - 30)
-		{
-			w.setPosition(w.getX(), screenHeight - 30);
-		}
-	}
-
-	// höj vattnet, waterLevelRise bestämmer höjden
-	if (waterLevelRise > 0)
-	{
-		DrawRectangle(0, screenHeight - 30 - waterLevelRise, screenWidth, waterLevelRise, BLUE);
-	}
-
-	//rita vatten objekt
-	for (auto const& w : water)
-	{
-		w.drawElement();
-	}
-
-	//rita sand obejtk
-	for (auto const& s : sand)
-	{
-		s.drawElement();
-	}
-
-	displayTexts();
-	DrawFloor();
+    displayTexts();
+    DrawFloor();
 }
 
 bool Engine::isPositionBelowEmpty(int x, int y)
 {
 	int checkY = y + 5;
 
-	for (auto const& s : sand)
+	for (auto const& element : elements)
 	{
-		if (s.getX() == x && s.getY() == checkY)
+		if (element->getX() == x && element->getY() == checkY)
 		{
 			return false;
 		}
@@ -161,10 +144,23 @@ bool Engine::isPositionBelowEmpty(int x, int y)
 
 void Engine::displayTexts()
 {
-	DrawText(TextFormat("FPS: %d", GetFPS()), 1080, 15, 20, WHITE);
-	DrawText(TextFormat("Sand: %d", sand.size()), 1080, 45, 20, WHITE);
-	DrawText(TextFormat("Water: %d", water.size()), 1080, 75, 20, WHITE);
-	DrawText(TextFormat("Press R to delete sand and water"), 20, 15, 20, WHITE);
-	DrawText(TextFormat("Press MouseButton1 to spawn sand"), 20, 45, 20, WHITE);
-	DrawText(TextFormat("Press MouseButton2 to spawn water"), 20, 75, 20, WHITE);
+	DrawText(TextFormat("FPS: %d", GetFPS()), 980, 15, 20, WHITE);
+	DrawText(TextFormat("Total elements: %d", elements.size()), 980, 45, 20, WHITE);
+	DrawText(TextFormat("Press R to reset"), 20, 15, 20, WHITE);
+	DrawText(TextFormat("MB1 to spawn sand"), 20, 45, 20, WHITE);
+	DrawText(TextFormat("MB2 to spawn water"), 20, 75, 20, WHITE);
+}
+
+template<typename T>
+std::vector<T*> Engine::getElementsOfType() 
+{
+    std::vector<T*> result;
+    for (auto& e : elements) 
+    {
+        if (T* type = dynamic_cast<T*>(e.get())) 
+        {
+            result.push_back(type);
+        }
+    }
+    return result;
 }

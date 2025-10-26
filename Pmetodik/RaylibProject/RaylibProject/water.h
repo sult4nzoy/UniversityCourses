@@ -3,13 +3,9 @@
 
 class Water : public Element
 {
-private:
-	int xPos;
-	int yPos;
 
 public:
 	Water(int x, int y);
-	std::string getType() override;
 	int getX() const;
 	int getY() const;
 	void drawElement() const override;

@@ -3,15 +3,10 @@
 
 class Sand : public Element{
 
-private:
-	int xPos;
-	int yPos;
-
 public:
 	Sand(int x, int y);
-	std::string getType() override;
-	int getX() const;
-	int getY() const;
+	int getX() const override;
+	int getY() const override;
 	void drawElement() const override;
 	int getWidth() const override;
 	int getHeight() const override;

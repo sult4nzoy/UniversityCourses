@@ -1,12 +1,7 @@
 #include "sand.h"
 
-Sand::Sand(int x, int y) : Element(5, 5, 5, randomColor()), xPos(x), yPos(y)
+Sand::Sand(int x, int y) : Element(x, y, 5, 5, 5, randomColor())
 {
-}
-
-std::string Sand::getType()
-{
-	return "Sand";
 }
 
 int Sand::getX() const

@@ -1,12 +1,7 @@
 #include "water.h"
 
-Water::Water(int x, int y) : Element(20, 20, 0, BLUE), xPos(x), yPos(y)
+Water::Water(int x, int y) : Element(x, y, 20, 20, 0, BLUE)
 {}
-
-std::string Water::getType()
-{
-	return "Water";
-}
 
 int Water::getX() const
 {

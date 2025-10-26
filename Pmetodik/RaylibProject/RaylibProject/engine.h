@@ -6,6 +6,7 @@
 #include <string>
 #include <iostream>
 #include <vector>
+#include <memory>
 
 
 class Engine
@@ -21,12 +22,14 @@ public:
     bool isPositionBelowEmpty(int x, int y);
     void displayTexts();
 
+    template<typename T>
+    std::vector<T*> getElementsOfType();
+
 
 private:
     const char* gameTitle = "Sand Box Engine";
     int FPS = 120;
     int screenWidth = 1200;
     int screenHeight = 700;
-    std::vector<Sand> sand;
-	std::vector<Water> water;
+    std::vector<std::unique_ptr<Element>> elements;
 };
