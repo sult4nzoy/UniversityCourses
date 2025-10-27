@@ -1,8 +1,7 @@
 #include "sand.h"
 
 Sand::Sand(int x, int y) : Element(x, y, 5, 5, 5, randomColor())
-{
-}
+{}
 
 int Sand::getX() const
 {
@@ -11,7 +10,7 @@ int Sand::getX() const
 
 int Sand::getY() const
 {
-	return yPos;;
+	return yPos;
 }
 
 void Sand::drawElement() const

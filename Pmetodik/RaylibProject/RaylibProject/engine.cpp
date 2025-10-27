@@ -46,9 +46,9 @@ void Engine::updateGame()
     if (IsMouseButtonDown(MOUSE_RIGHT_BUTTON))
     {
         int mouseX = getMousePositionX();
-        int mouseY = getMousePositionY();
-        mouseX = int(mouseX / 5) * 5;
-        mouseY = int(mouseY / 5) * 5;
+         int mouseY = getMousePositionY();
+        mouseX = (mouseX / 5) * 5;
+        mouseY = (mouseY / 5) * 5;
         elements.push_back(std::make_unique<Water>(mouseX, mouseY));
     }
 
@@ -97,13 +97,15 @@ void Engine::updateGame()
         }
 
 		//golv kollission
-        if (sand->getY() + sand->getHeight() > screenHeight - 30) {
+        if (sand->getY() + sand->getHeight() > screenHeight - 30) 
+        {
             sand->setPosition(sand->getX(), screenHeight - 30);
         }
     }
 
     //vatten physics
-    for (Water* water : getElementsOfType<Water>()) {
+    for (Water* water : getElementsOfType<Water>())
+    {
         water->Gravity();
 
 		//golv kollission
@@ -145,7 +147,7 @@ bool Engine::isPositionBelowEmpty(int x, int y)
 void Engine::displayTexts()
 {
 	DrawText(TextFormat("FPS: %d", GetFPS()), 980, 15, 20, WHITE);
-	DrawText(TextFormat("Total elements: %d", elements.size()), 980, 45, 20, WHITE);
+	DrawText(TextFormat("Total elements : %d", elements.size()), 980, 45, 20, WHITE);
 	DrawText(TextFormat("Press R to reset"), 20, 15, 20, WHITE);
 	DrawText(TextFormat("MB1 to spawn sand"), 20, 45, 20, WHITE);
 	DrawText(TextFormat("MB2 to spawn water"), 20, 75, 20, WHITE);
