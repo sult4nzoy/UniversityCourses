@@ -38,6 +38,3 @@ void Water::setPosition(int x, int y)
 	xPos = x;
 	yPos = y;
 }
-
-
-

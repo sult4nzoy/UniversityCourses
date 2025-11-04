@@ -24,4 +24,3 @@ public:
 	virtual int getY() const = 0;
 
 };
-

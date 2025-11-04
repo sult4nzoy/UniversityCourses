@@ -46,8 +46,8 @@ void Engine::updateGame()
     if (IsMouseButtonDown(MOUSE_RIGHT_BUTTON))
     {
         int mouseX = getMousePositionX();
-         int mouseY = getMousePositionY();
-        mouseX = (mouseX / 5) * 5;
+        int mouseY = getMousePositionY();
+        mouseX = (mouseX / 5) * 5;      
         mouseY = (mouseY / 5) * 5;
         elements.push_back(std::make_unique<Water>(mouseX, mouseY));
     }
@@ -58,7 +58,7 @@ void Engine::updateGame()
     int currentWaterLevel = screenHeight - 30 - static_cast<int>(waterLevelRise);
 
     //sand physics
-    for (Sand* sand : getElementsOfType<Sand>()) 
+    for (Sand* sand : getElementsOfType<Sand>())
     {
         bool isInWater = sand->getY() >= currentWaterLevel;
 
