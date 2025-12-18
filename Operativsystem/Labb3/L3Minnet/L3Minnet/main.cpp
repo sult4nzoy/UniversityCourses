@@ -1,12 +1,12 @@
-#include <iostream>
-
 /*
+	MITTUNIVERSITETET
 	Författare: Omar Sultanzoy
 	Kurs: Operativsystem - L3 Minnet
-	Datum: 2025-12-##
+	Inlämningsdatum: 2025-12-15
 	Kursanvsvarig: Jimmy Åhlander
 */
-
+#include <iostream>
+#include <string>
 
 int main() {
 
@@ -19,7 +19,7 @@ int main() {
 	std::cin >> val;
 	int64_t chunk_size_byte = 0;
 	int64_t total_allocated = 0;
-
+	std::string lolz;
 	switch (val)
 	{
 	case 1:
@@ -34,17 +34,21 @@ int main() {
 	default:
 		std::cout << "Ogiltigt val" << std::endl;
 	}
+	const int MiB = 1024 * 1024;
 	while (true)
 	{
 		try {
-			new int[(chunk_size_byte) / sizeof(chunk_size_byte)];
-			total_allocated += chunk_size_byte;
+			new int[chunk_size_byte / sizeof(int)];
 		}
 		catch (std::bad_alloc error) {
 			std::cout << "Error msg from bad_alloc: " << error.what() << std::endl;
-			std::cout << "Total allocated memory: " << total_allocated / (1024 * 1024 * 1024)  << " GiB" << std::endl;
-			return 0;
-			}
+			std::cin >> lolz;
+			break;
 		}
+		total_allocated += chunk_size_byte;
+		if ((total_allocated % MiB) == 0) {
+			std::cout << "Total allocated memory: " << total_allocated / (1024 * 1024) << " MiB" << std::endl;
+		}
+	}
 	return 0;
 }
