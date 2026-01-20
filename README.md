@@ -1,2 +1,0 @@
-# UniversityCourses
-labbar till kurser

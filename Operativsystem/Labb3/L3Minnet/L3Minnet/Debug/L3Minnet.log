@@ -1,0 +1,3 @@
+﻿  main.cpp
+C:\Users\Omar\Desktop\UniversityCourses\Operativsystem\Labb3\L3Minnet\L3Minnet\main.cpp(41,28): warning C4244: 'initializing': conversion from 'int64_t' to 'unsigned int', possible loss of data
+  L3Minnet.vcxproj -> C:\Users\Omar\Desktop\UniversityCourses\Operativsystem\Labb3\L3Minnet\Debug\L3Minnet.exe

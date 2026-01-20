@@ -1,3 +1,0 @@
-C:/Users/OmarK/OneDrive/Skrivbord/Pmetodik/Labb4CLION/build/CMakeFiles/Labb4CLION.dir
-C:/Users/OmarK/OneDrive/Skrivbord/Pmetodik/Labb4CLION/build/CMakeFiles/edit_cache.dir
-C:/Users/OmarK/OneDrive/Skrivbord/Pmetodik/Labb4CLION/build/CMakeFiles/rebuild_cache.dir
