@@ -1,0 +1,6 @@
+Komponenter använda för att utföra laborationen:
+-1x knapp
+-1x arduino UNO + breadboard
+-7x kablar
+-4 lysdioder
+-5 resistorer

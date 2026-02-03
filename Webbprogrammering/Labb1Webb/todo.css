@@ -1,0 +1,39 @@
+body{
+    padding: 100px;
+    color: white;
+    background-color:rgb(17, 34, 192);
+    font-family: sans-serif;
+}
+
+#inputText{
+    border-radius: 10px;
+}
+
+h1{
+    background-color:rgb(0, 0, 0);
+    font-family: sans-serif;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#add{
+    background-color: rgb(15, 211, 15); 
+    color: black;
+    border-radius: 10px;
+}
+#remove{
+    background-color: rgb(218, 209, 38); 
+    color: black;
+    border-radius: 10px;
+}
+#removeEntireList{
+    background-color: rgb(239, 0, 0);
+    color: black;
+    border-radius: 10px;
+}
+
+#taskList{
+    list-style: none;
+    padding: 0;
+}
