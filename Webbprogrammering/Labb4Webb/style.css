@@ -1,0 +1,29 @@
+body {
+    background-color: #eeeeee;
+    font-family: sans-serif;
+    margin: 40px;
+}
+
+header, footer, main, h3, h4 {
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #6a6868;
+    display: block;
+    margin-bottom: 15px;
+}
+
+h1, h2, h3 {
+    color: darkblue;
+}
+
+h4 {
+    color: #333333;
+    font-weight: normal;
+}
+
+a {
+    color: blue;
+    font-weight: bold;
+    text-decoration: none;
+    margin-right: 20px;
+}
