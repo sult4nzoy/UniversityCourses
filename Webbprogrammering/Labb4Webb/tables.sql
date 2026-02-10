@@ -3,5 +3,3 @@ CREATE TABLE GuestBook(
     postText VARCHAR(255);
     dateAndTime VARCHAR(255);
 );
-
-
