@@ -1,0 +1,32 @@
+Steg 1: Planering & Databas (Fundamentet)
+-Innan du skriver en enda rad PHP måste du veta hur datan hänger ihop.
+-ER-diagram: Skissa upp din databas. Du behöver minst tabellerna users, products, orders och order_items (för att koppla produkter till en specifik order).
+-Skapa databasen: Kör upp din MySQL lokalt. Skapa tabellerna och lägg in lite "dummy data" (testprodukter) så att du har något att visa på sidan senare.
+-Grafisk profil: Bestäm färger och typsnitt. Skapa en enkel mockup eller skiss över hur förstasidan och produktsidan ska se ut.
+
+Steg 2: Backend-arkitektur (Motorn)
+-Här sätter du upp strukturen som vi diskuterade tidigare.
+-Config & Database: Skapa config.php för anslutningsuppgifter och en Database-klass som använder PDO.
+-Klass-skelett: Skapa de grundläggande klasserna:
+-Product.php: Metoder för att hämta alla produkter (getAll()) eller en specifik produkt (getById($id)).
+-Cart.php: Logik för att lägga till/ta bort saker från $_SESSION['cart'].
+-Mappstruktur: Skapa de mappar vi gick igenom (public, src, includes).
+
+Steg 3: Frontend & Dynamiskt innehåll (Skelettet)
+-Nu börjar vi se resultat i webbläsaren.
+-Base Layout: Skapa header.php och footer.php. Inkludera CSS-filer och navigationsmenyn här.
+-Produktsida: Skapa en index.php som loopar igenom dina produkter från databasen via din Product-klass och skriver ut dem i snygga HTML-kort (CSS Grid/Flexbox är dina vänner här).
+-Enskild produktsida: Skapa en sida (t.ex. product_details.php?id=1) som visar mer info om en specifik vara.
+
+Steg 4: Funktionalitet (Affärslogiken)
+Det är nu webbplatsen blir "smart".
+-Kundkorgen: Skapa logiken där användaren klickar på "Köp" och produkten sparas i sessionen. Visa en liten räknare vid kundkorgs-ikonen.
+-Checkout-sida: En sida som listar allt i sessionen och visar totalsumman.
+-Orderhantering: När användaren klickar på "Slutför köp", använd Order-klassen för att spara ner informationen i databasen och tömma kundkorgen.
+
+Steg 5: Finslipning & Säkerhet
+Detta är vad som skiljer en studentuppgift från ett professionellt projekt.
+-Validering: Se till att man inte kan skicka tomma formulär eller beställa -5 stycken av en vara.
+-Säkerhet: Dubbelkolla att du använder Prepared Statements (PDO) överallt för att förhindra SQL-injections.
+-UX/UI: Lägg till små detaljer som "Tack för din order"-meddelanden och hover-effekter på knappar.
+-Uppladdning: Flytta databasen och filerna till skolans server och se till att alla sökvägar fortfarande fungerar.
