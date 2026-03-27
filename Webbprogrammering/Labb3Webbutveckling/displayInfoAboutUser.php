@@ -1,4 +1,5 @@
 <?php
+
 function display_visitor_info() {
     echo "Datum/klockslag: " . date("Y-m-d H:i:s");
 
