@@ -8,5 +8,4 @@ add_executable(labb1 main.cpp
         reader.h
         graph.cpp
         graph.h
-        dijkstras.cpp
-        dijkstras.h)
+)
