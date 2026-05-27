@@ -1,0 +1,35 @@
+N: 18
+Alg: Linear Search
+T[ns]: 13.4
+Stdev[ns]: 8.08084
+Sample: 5
+N: 30
+Alg: Linear Search
+T[ns]: 14.6
+Stdev[ns]: 7.1624
+Sample: 5
+N: 54
+Alg: Linear Search
+T[ns]: 30.2
+Stdev[ns]: 3.96232
+Sample: 5
+N: 97
+Alg: Linear Search
+T[ns]: 36.4
+Stdev[ns]: 0.547723
+Sample: 5
+N: 564
+Alg: Linear Search
+T[ns]: 119.4
+Stdev[ns]: 0.894427
+Sample: 5
+N: 1027
+Alg: Linear Search
+T[ns]: 221.8
+Stdev[ns]: 0.83666
+Sample: 5
+N: 1900
+Alg: Linear Search
+T[ns]: 424.8
+Stdev[ns]: 9.31128
+Sample: 5

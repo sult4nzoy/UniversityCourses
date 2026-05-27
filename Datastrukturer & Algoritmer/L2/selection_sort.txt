@@ -1,0 +1,184 @@
+N: 2000
+Ordning: Randomized Vector
+T[ms]: 7.63666
+Stdev[ms]: 0.151614
+Sample: 5
+N: 25000
+Ordning: Randomized Vector
+T[ms]: 1097.6
+Stdev[ms]: 51.7832
+Sample: 5
+N: 50000
+Ordning: Randomized Vector
+T[ms]: 4203.82
+Stdev[ms]: 29.3857
+Sample: 5
+N: 75000
+Ordning: Randomized Vector
+T[ms]: 9448.01
+Stdev[ms]: 32.6286
+Sample: 5
+N: 100000
+Ordning: Randomized Vector
+T[ms]: 16676.8
+Stdev[ms]: 62.2412
+Sample: 5
+N: 125000
+Ordning: Randomized Vector
+T[ms]: 27749
+Stdev[ms]: 2488.84
+Sample: 5
+N: 150000
+Ordning: Randomized Vector
+T[ms]: 46754.4
+Stdev[ms]: 47.9589
+Sample: 5
+N: 175000
+Ordning: Randomized Vector
+T[ms]: 63680.7
+Stdev[ms]: 148.301
+Sample: 5
+N: 200000
+Ordning: Randomized Vector
+T[ms]: 81308.5
+Stdev[ms]: 12075.9
+Sample: 5
+-----------------------5
+N: 2000
+Ordning: Constant Vector
+T[ms]: 5.73368
+Stdev[ms]: 1.44714
+Sample: 5
+N: 25000
+Ordning: Constant Vector
+T[ms]: 812.01
+Stdev[ms]: 39.2481
+Sample: 5
+N: 50000
+Ordning: Constant Vector
+T[ms]: 3479.86
+Stdev[ms]: 483.922
+Sample: 5
+N: 75000
+Ordning: Constant Vector
+T[ms]: 9586.17
+Stdev[ms]: 119.107
+Sample: 5
+N: 100000
+Ordning: Constant Vector
+T[ms]: 14396.5
+Stdev[ms]: 2268.02
+Sample: 5
+N: 125000
+Ordning: Constant Vector
+T[ms]: 26780.9
+Stdev[ms]: 3604.4
+Sample: 5
+N: 150000
+Ordning: Constant Vector
+T[ms]: 40587
+Stdev[ms]: 3852.64
+Sample: 5
+N: 175000
+Ordning: Constant Vector
+T[ms]: 64817.7
+Stdev[ms]: 1381.58
+Sample: 5
+N: 200000
+Ordning: Constant Vector
+T[ms]: 83095.9
+Stdev[ms]: 107.156
+Sample: 5
+-----------------------5
+N: 2000
+Ordning: Acsending Vector
+T[ms]: 8.68478
+Stdev[ms]: 0.752159
+Sample: 5
+N: 25000
+Ordning: Acsending Vector
+T[ms]: 1303.5
+Stdev[ms]: 12.0008
+Sample: 5
+N: 50000
+Ordning: Acsending Vector
+T[ms]: 5173.66
+Stdev[ms]: 21.3389
+Sample: 5
+N: 75000
+Ordning: Acsending Vector
+T[ms]: 11666.5
+Stdev[ms]: 16.7453
+Sample: 5
+N: 100000
+Ordning: Acsending Vector
+T[ms]: 21081.1
+Stdev[ms]: 2365.49
+Sample: 5
+N: 125000
+Ordning: Acsending Vector
+T[ms]: 18859.5
+Stdev[ms]: 320.793
+Sample: 5
+N: 150000
+Ordning: Acsending Vector
+T[ms]: 27852.2
+Stdev[ms]: 1581.54
+Sample: 5
+N: 175000
+Ordning: Acsending Vector
+T[ms]: 48914
+Stdev[ms]: 5431.84
+Sample: 5
+N: 200000
+Ordning: Acsending Vector
+T[ms]: 69240.7
+Stdev[ms]: 4218.67
+Sample: 5
+-----------------------5
+N: 2000
+Ordning: Decsending Vector
+T[ms]: 7.41686
+Stdev[ms]: 1.00201
+Sample: 5
+N: 25000
+Ordning: Decsending Vector
+T[ms]: 1061.41
+Stdev[ms]: 24.3596
+Sample: 5
+N: 50000
+Ordning: Decsending Vector
+T[ms]: 4300.37
+Stdev[ms]: 164.282
+Sample: 5
+N: 75000
+Ordning: Decsending Vector
+T[ms]: 9421.21
+Stdev[ms]: 83.2426
+Sample: 5
+N: 100000
+Ordning: Decsending Vector
+T[ms]: 16754.7
+Stdev[ms]: 95.8984
+Sample: 5
+N: 125000
+Ordning: Decsending Vector
+T[ms]: 26222.6
+Stdev[ms]: 160.932
+Sample: 5
+N: 150000
+Ordning: Decsending Vector
+T[ms]: 38250.1
+Stdev[ms]: 955.955
+Sample: 5
+N: 175000
+Ordning: Decsending Vector
+T[ms]: 53409.6
+Stdev[ms]: 3578.49
+Sample: 5
+N: 200000
+Ordning: Decsending Vector
+T[ms]: 76552.8
+Stdev[ms]: 8960.72
+Sample: 5
+-----------------------5

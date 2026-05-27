@@ -1,0 +1,35 @@
+N: 18
+Alg: Binary Search
+T[ns]: 13.2
+Stdev[ns]: 6.6106
+Sample: 5
+N: 30
+Alg: Binary Search
+T[ns]: 13.8
+Stdev[ns]: 6.37966
+Sample: 5
+N: 54
+Alg: Binary Search
+T[ns]: 18.8
+Stdev[ns]: 8.34865
+Sample: 5
+N: 97
+Alg: Binary Search
+T[ns]: 22.4
+Stdev[ns]: 8.61974
+Sample: 5
+N: 564
+Alg: Binary Search
+T[ns]: 31.8
+Stdev[ns]: 9.44458
+Sample: 5
+N: 1027
+Alg: Binary Search
+T[ns]: 35.4
+Stdev[ns]: 8.6487
+Sample: 5
+N: 1900
+Alg: Binary Search
+T[ns]: 40.8
+Stdev[ns]: 13.0652
+Sample: 5

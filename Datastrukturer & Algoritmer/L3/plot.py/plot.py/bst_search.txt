@@ -1,0 +1,35 @@
+N: 18
+Alg: BST Search
+T[ns]: 7
+Stdev[ns]: 4.84768
+Sample: 5
+N: 30
+Alg: BST Search
+T[ns]: 9
+Stdev[ns]: 6.04152
+Sample: 5
+N: 54
+Alg: BST Search
+T[ns]: 10
+Stdev[ns]: 7.58288
+Sample: 5
+N: 97
+Alg: BST Search
+T[ns]: 12
+Stdev[ns]: 6.96419
+Sample: 5
+N: 564
+Alg: BST Search
+T[ns]: 15
+Stdev[ns]: 10.6536
+Sample: 5
+N: 1027
+Alg: BST Search
+T[ns]: 17
+Stdev[ns]: 8
+Sample: 5
+N: 1900
+Alg: BST Search
+T[ns]: 19.8
+Stdev[ns]: 7.66159
+Sample: 5

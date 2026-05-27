@@ -1,0 +1,35 @@
+N: 18
+Alg: Hash Search
+T[ns]: 3.6
+Stdev[ns]: 0.894427
+Sample: 5
+N: 30
+Alg: Hash Search
+T[ns]: 4.2
+Stdev[ns]: 0.447214
+Sample: 5
+N: 54
+Alg: Hash Search
+T[ns]: 3.8
+Stdev[ns]: 0.83666
+Sample: 5
+N: 97
+Alg: Hash Search
+T[ns]: 3.6
+Stdev[ns]: 0.547723
+Sample: 5
+N: 564
+Alg: Hash Search
+T[ns]: 4.2
+Stdev[ns]: 1.09545
+Sample: 5
+N: 1027
+Alg: Hash Search
+T[ns]: 4.4
+Stdev[ns]: 0.894427
+Sample: 5
+N: 1900
+Alg: Hash Search
+T[ns]: 4.4
+Stdev[ns]: 0.894427
+Sample: 5
