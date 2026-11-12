@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Omar Sultanzoy\\Desktop\\UniversityCourses\\ProgrammeringsmetodikC\u002B\u002B\\RaylibProject\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2BF9998F-DC98-410A-A30D-72B130224ED5}|RaylibProject\\RaylibProject.vcxproj|C:\\Users\\Omar Sultanzoy\\Desktop\\UniversityCourses\\ProgrammeringsmetodikC\u002B\u002B\\RaylibProject\\RaylibProject\\element.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2BF9998F-DC98-410A-A30D-72B130224ED5}|RaylibProject\\RaylibProject.vcxproj|solutionrelative:RaylibProject\\element.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "element.cpp",
+              "DocumentMoniker": "C:\\Users\\Omar Sultanzoy\\Desktop\\UniversityCourses\\ProgrammeringsmetodikC\u002B\u002B\\RaylibProject\\RaylibProject\\element.cpp",
+              "RelativeDocumentMoniker": "RaylibProject\\element.cpp",
+              "ToolTip": "C:\\Users\\Omar Sultanzoy\\Desktop\\UniversityCourses\\ProgrammeringsmetodikC\u002B\u002B\\RaylibProject\\RaylibProject\\element.cpp",
+              "RelativeToolTip": "RaylibProject\\element.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-10-27T14:42:31.261Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

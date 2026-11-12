@@ -1,0 +1,130 @@
+QUIZ: Förståelse av mina commits / Understanding my commits
+
+10 flervalsfrågor. Välj A, B, C eller D för varje fråga. Facit ingår inte.
+10 multiple-choice questions. Choose A, B, C, or D for each. The answer key is not included.
+
+1. Vad används `id_map` till efter att layouten sparats?
+   What is `id_map` used for after saving a layout?
+
+A. Byta tillfälliga skrivbords-ID:n mot beständiga databas-ID:n.
+   Replace temporary desk IDs with persistent database IDs.
+B. Omvandla vägg- och rums-ID:n till CSV-radnummer.
+   Convert wall and room IDs into CSV row numbers.
+C. Översätta skärmkoordinater till positioner i rutnätet.
+   Translate screen coordinates into grid positions.
+D. Återställa borttagna skrivbords-ID:n när ändringen avbryts.
+   Restore deleted desk IDs when the edit is cancelled.
+
+2. Hur stort område täcker ett placerat rum i layouteditorn?
+   How large an area does a placed room cover in the layout editor?
+
+A. Ett rutnät på 2 x 2 celler, placerat från vald cell.
+   A 2 x 2 cell grid, starting at the selected cell.
+B. Ett rutnät på 3 x 3 celler, placerat från vald cell.
+   A 3 x 3 cell grid, starting at the selected cell.
+C. En rad på tre celler, centrerad kring vald cell.
+   A row of three cells, centered on the selected cell.
+D. En kolumn på tre celler, centrerad kring vald cell.
+   A column of three cells, centered on the selected cell.
+
+3. Hur fungerar väggverktyget när användaren drar över rutnätet?
+   How does the wall tool behave when the user drags across the grid?
+
+A. Det låser den valda axeln och fyller cellerna längs dragets riktning.
+   It locks one axis and fills cells along the drag direction.
+B. Det följer pekaren fritt och placerar väggar i båda riktningarna.
+   It follows the pointer freely and places walls in both directions.
+C. Det placerar en vägg vid start och en vid slut, utan mellanliggande celler.
+   It places a wall at each endpoint, leaving cells between them empty.
+D. Det väntar tills släppet och placerar en vägg vid den sista cellen.
+   It waits for release and places a wall only at the final cell.
+
+4. Var lagras skrivbordspositioner jämfört med väggar och rum?
+   Where are desk positions stored compared with walls and rooms?
+
+A. Alla objekt lagras i MySQL; CSV-filen används bara som export.
+   All objects are stored in MySQL; CSV is only an export.
+B. Alla objekt lagras i CSV; MySQL lagrar bara närvaro.
+   All objects are stored in CSV; MySQL stores only presence.
+C. Skrivbord lagras i MySQL; väggar och rum lagras i CSV.
+   Desks are stored in MySQL; walls and rooms are stored in CSV.
+D. Skrivbord och väggar lagras i MySQL; rum lagras i CSV.
+   Desks and walls are stored in MySQL; rooms are stored in CSV.
+
+5. Varför får nya objekt tillfälliga negativa ID:n?
+   Why are new objects assigned temporary negative IDs?
+
+A. För att skilja lokala objekt från databasobjekt med positiva ID:n.
+   To distinguish local items from database items with positive IDs.
+B. För att sortera väggar före rum när CSV-filen skrivs.
+   To sort walls before rooms when writing the CSV file.
+C. För att identifiera objekt som inte ryms inom golvets gränser.
+   To identify items that do not fit within the floor boundaries.
+D. För att servern ska kunna avgöra vilka objekt som ska pensioneras.
+   To let the server decide which items should be retired.
+
+6. Vad är den huvudsakliga skillnaden mellan Spara och Avbryt i editorn?
+   What is the main difference between Save and Cancel in the editor?
+
+A. Spara skickar layouten till servern; Avbryt återställer den sparade kopian.
+   Save sends the layout to the server; Cancel restores the saved copy.
+B. Spara skriver bara CSV; Avbryt tar bort skrivbord från databasen.
+   Save writes only the CSV; Cancel deletes desks from the database.
+C. Spara låser editorn; Avbryt behåller alla ändringar lokalt.
+   Save locks the editor; Cancel keeps all changes locally.
+D. Spara uppdaterar bara skrivbord; Avbryt sparar väggar och rum.
+   Save updates only desks; Cancel saves walls and rooms.
+
+7. Vad ändrades i `useAnimatedStyle` för att undvika webbkraschen?
+   What changed in `useAnimatedStyle` to prevent the web crash?
+
+A. En tom dependency array lades till i anropen.
+   An empty dependency array was added to the calls.
+B. Shared values ersattes med React state i komponenterna.
+   Shared values were replaced with React state in the components.
+C. Animationerna flyttades från komponenterna till eventhanterare.
+   Animations were moved from components into event handlers.
+D. Varje animerad vy fick en egen navigation provider.
+   Each animated view received its own navigation provider.
+
+8. Hur detaljerad är den nya närvarostatistiken för nyliga dagar?
+   How detailed is the new presence statistics data for recent days?
+
+A. Den grupperas i intervall om 15 minuter per skrivbord.
+   It is grouped into 15-minute intervals per workstation.
+B. Den grupperas i intervall om 30 minuter per skrivbord.
+   It is grouped into 30-minute intervals per workstation.
+C. Den grupperas i intervall om 60 minuter per skrivbord.
+   It is grouped into 60-minute intervals per workstation.
+D. Den sparas som en enda totalsumma per skrivbord och dag.
+   It is stored as one total per workstation and day.
+
+9. Hur begränsas hur länge ett intervall räknas som Occupied?
+   How is the duration counted as Occupied bounded?
+
+A. Vid nästa närvarohändelse, eller vid den dagliga återställningen.
+   At the next presence event, or at the daily reset.
+B. Vid nästa kontoinloggning, eller när skrivbordet pensioneras.
+   At the next account login, or when the workstation is retired.
+C. Vid den valda dagens slut, eller när statistiken hämtas.
+   At the end of the selected date, or when statistics are fetched.
+D. Vid två missade incheckningar, eller vid den dagliga återställningen.
+   At two missed check-ins, or at the daily reset.
+
+10. Vad händer med detaljerad tidsdata som är äldre än sju dagar?
+    What happens to detailed time data older than seven days?
+
+A. Den behåller 30-minutersintervallen men tar bort skrivbordsnamnen.
+   It keeps the 30-minute intervals but removes workstation names.
+B. Den slås ihop till dagliga totalsummor och intervallen tas bort.
+   It is rolled into daily totals and the intervals are deleted.
+C. Den tas bort helt, inklusive dagliga totalsummor.
+   It is deleted entirely, including daily totals.
+D. Den slås ihop per vecka och behåller närvarohändelserna.
+   It is rolled up by week and retains the presence events.
+
+Mina svar / My answers:
+1. __  2. __  3. __  4. __  5. __
+6. __  7. __  8. __  9. __  10. __
+
+Poäng / Score: ____ / 10
